@@ -8,7 +8,7 @@ import data_setup, engine, model_builder, utils
 
 from torchvision import transforms
 
-def main()
+def main():
     # Setup hyperparameters
     NUM_EPOCHS = 5
     BATCH_SIZE = 32
