@@ -3,6 +3,7 @@ Trains a PyTorch image classification model using device-agnostic code.
 """
 
 import os
+import sys
 import torch
 import data_setup, engine, model_builder, utils
 
@@ -10,16 +11,16 @@ from torchvision import transforms
 
 def main():
     # Setup hyperparameters
-    if not args:
-        NUM_EPOCHS = 15
-        BATCH_SIZE = 32
-        HIDDEN_UNITS = 10
-        LEARNING_RATE = 0.001
-    else:
+    if len(sys.argv) > 0:
         NUM_EPOCHS = args[3]
         BATCH_SIZE = args[1]
         HIDDEN_UNITS = 10
         LEARNING_RATE = args[2]
+    else:
+        NUM_EPOCHS = 15
+        BATCH_SIZE = 32
+        HIDDEN_UNITS = 10
+        LEARNING_RATE = 0.001
     
     # Setup directories
     train_dir = "data/pizza_steak_sushi/train"
