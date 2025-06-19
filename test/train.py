@@ -10,10 +10,16 @@ from torchvision import transforms
 
 def main():
     # Setup hyperparameters
-    NUM_EPOCHS = 5
-    BATCH_SIZE = 32
-    HIDDEN_UNITS = 10
-    LEARNING_RATE = 0.001
+    if not args:
+        NUM_EPOCHS = 15
+        BATCH_SIZE = 32
+        HIDDEN_UNITS = 10
+        LEARNING_RATE = 0.001
+    else:
+        NUM_EPOCHS = args[3]
+        BATCH_SIZE = args[1]
+        HIDDEN_UNITS = 10
+        LEARNING_RATE = args[2]
     
     # Setup directories
     train_dir = "data/pizza_steak_sushi/train"
