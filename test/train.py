@@ -11,13 +11,13 @@ from torchvision import transforms
 
 def main():
     # Setup hyperparameters
-    if len(sys.argv) > 0:
-        NUM_EPOCHS = args[3]
-        BATCH_SIZE = args[1]
+    if len(sys.argv) > 1:
+        NUM_EPOCHS = args[8]
+        BATCH_SIZE = args[4]
         HIDDEN_UNITS = 10
-        LEARNING_RATE = args[2]
+        LEARNING_RATE = args[6]
     else:
-        NUM_EPOCHS = 15
+        NUM_EPOCHS = 10
         BATCH_SIZE = 32
         HIDDEN_UNITS = 10
         LEARNING_RATE = 0.001
